@@ -43,16 +43,32 @@ public class Car{
   }
   //Tank setter
   public void fillTank(){
-    fuelRemaining = newFuelRemaining;
+    fuelRemaining = tankSize;
   }
   //driveInMiles setter
-  public void driveInMiles(miles){
+  public void driveInMiles(double miles){
+    double tempTotalMiles = totalMilesRemaining;
     totalMilesRemaining-= miles;
+    fuelRemaining = (totalMilesRemaining/milesPerGallon);
+    if (fuelRemaining < 0){
+      fuelRemaining = 0;
+      System.out.println("You ran out of gas " + tempTotalMiles + " miles into your drive!");
+      System.out.println("------------------------------");
+    }else{
+      System.out.println("You drove " + miles + " miles!");
+      System.out.println("------------------------------");
+    }
   }
   public String toString(){
+    String noGas = "I'm disappointed in you";
     String result = "";
     result+= "Company: " + company + "\n Model: " + model;
     result+= "\n MPG: " + milesPerGallon + "\n Fuel remaining: " + fuelRemaining;
     result+= "\n Tank Size: " + tankSize + "\n Total miles remaining: " + totalMilesRemaining;
+    if(totalMilesRemaining >= 0){
+      return result;
+    }else{
+      return noGas;
+    }
   }
 }
