@@ -44,6 +44,7 @@ public class Car{
   //Tank setter
   public void fillTank(){
     fuelRemaining = tankSize;
+    totalMilesRemaining = (tankSize * milesPerGallon);
   }
   //driveInMiles setter
   public void driveInMiles(double miles){
