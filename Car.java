@@ -11,8 +11,8 @@ Create a client class with 3 instances of the car class. The client class should
 methods from the Car class and print out relevant information to prove the proper functionality of your Car class.
 */
 public class Car{
-  private String company = "";
-  private String model = "";
+  private String company;
+  private String model;
   private double milesPerGallon;
   private double fuelRemaining; //in gallons
   private double tankSize; //in gallons
