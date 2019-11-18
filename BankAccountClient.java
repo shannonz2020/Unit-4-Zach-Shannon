@@ -5,8 +5,7 @@ public class BankAccountClient {
 
         //myAccount.deposit(100);
         //myAccount.withdraw(30);
-        //myAccount.transfer(20, yourAccount);
-        myAccount.getAccountNumber();
+        myAccount.getAccountType();
         myAccount.toString();
     }
 }

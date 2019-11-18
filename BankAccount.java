@@ -10,10 +10,10 @@ public class BankAccount{
   private String accountNumber;//random
   private int accountType;//[1] = checking, [2] = savings
 
-  final double MIN_CHECKING_RATE = 0.01;
-  final double MAX_CHECKING_RATE = 0.25;
-  final double MIN_SAVINGS_RATE = 0.26;
-  final double MAX_SAVINGS_RATE = 1.00;
+  private final double MIN_CHECKING_RATE = 0.01;
+  private final double MAX_CHECKING_RATE = 0.25;
+  private final double MIN_SAVINGS_RATE = 0.26;
+  private final double MAX_SAVINGS_RATE = 1.00;
 
   public BankAccount(String aUsername, String aPassword, int aPin, int accountType){
     username = aUsername;
@@ -41,6 +41,20 @@ public class BankAccount{
             return "You have a checking account";
         }else{
             return "You have a savings account";
+        }
+    }
+    public void deposit(int amount, int pin){
+      if(this.pin == pin) {
+          currentBalance += amount;
+      }else{
+          System.out.println("You entered the wrong pin");
+      }
+    }
+    public void withdraw(int amount){
+        if(this.pin == pin) {
+            currentBalance -= amount;
+        }else{
+            System.out.println("You entered the wrong pin");
         }
     }
 
